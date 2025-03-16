@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<h2><%= titulo %></h2>
+
+<div class="historias-container">
+    <% if (historias && historias.length > 0) { %>
+        <div class="historias-grid">
+            <% historias.forEach(historia => { %>
+                <div class="historia-card <%= historia.estado.toLowerCase().replace(' ', '-') %>">
+                    <h3><%= historia.titulo %></h3>
+                    <p class="descripcion"><%= historia.descripcion %></p>
+                    <div class="meta-info">
+                        <span class="prioridad">Prioridad: <%= historia.prioridad %></span>
+                        <span class="estimacion">Estimación: <%= historia.estimacion %> puntos</span>
+                        <span class="estado">Estado: <%= historia.estado %></span>
+                    </div>
+                    <div class="actions">
+                        <a href="/historia/<%= historia.id %>" class="btn btn-info">Ver</a>
+                        <a href="/editar/<%= historia.id %>" class="btn btn-primary">Editar</a>
+                        <form action="/eliminar/<%= historia.id %>" method="POST" class="inline-form">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta historia?')">Eliminar</button>
+                        </form>
+                    </div>
+                    <div class="estado-selector">
+                        <select class="estado-select" data-id="<%= historia.id %>">
+                            <option value="Pendiente" <%= historia.estado === 'Pendiente' ? 'selected' : '' %>>Pendiente</option>
+                            <option value="En progreso" <%= historia.estado === 'En progreso' ? 'selected' : '' %>>En progreso</option>
+                            <option value="Completada" <%= historia.estado === 'Completada' ? 'selected' : '' %>>Completada</option>
+                        </select>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <div class="empty-state">
+            <p>No hay historias de usuario. ¡Crea la primera!</p>
+            <a href="/crear" class="btn btn-primary">Crear Historia</a>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

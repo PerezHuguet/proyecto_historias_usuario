@@ -1,0 +1,23 @@
+[
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "nombre": "Registro de usuarios",
+    "descripcion": "Quiero registrarme en la aplicación para acceder a sus funcionalidades",
+    "prioridad": 5,
+    "estado": "Pendiente"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "nombre": "Filtrar productos",
+    "descripcion": "Quiero filtrar productos por categoría para encontrar lo que busco más rápido",
+    "prioridad": 3,
+    "estado": "En progreso"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "nombre": "Recuperar contraseña",
+    "descripcion": "Quiero recuperar mi contraseña en caso de olvidarla",
+    "prioridad": 4,
+    "estado": "En progreso"
+  }
+]

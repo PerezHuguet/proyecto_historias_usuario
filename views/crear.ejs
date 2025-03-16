@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+
+<h2>Crear Nueva Historia de Usuario</h2>
+
+<% if (typeof error !== 'undefined') { %>
+    <div class="mensaje-error">
+        <%= error %>
+    </div>
+<% } %>
+
+<form action="/crear" method="POST" class="formulario-historia">
+    <%- include('./formulario', { historia }) %>
+    
+    <div class="form-actions">
+        <a href="/" class="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn-guardar">Guardar Historia</button>
+    </div>
+</form>
+
+<%- include('./partials/footer') %>

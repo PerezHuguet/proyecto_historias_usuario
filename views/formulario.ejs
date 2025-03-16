@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="<%= historia.nombre %>" required>
+</div>
+
+<div class="form-group">
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" rows="4" required><%= historia.descripcion %></textarea>
+</div>
+
+<div class="form-group">
+    <label for="prioridad">Prioridad (1-5):</label>
+    <select id="prioridad" name="prioridad">
+        <option value="1" <%= historia.prioridad == 1 ? 'selected' : '' %>>1 - Muy baja</option>
+        <option value="2" <%= historia.prioridad == 2 ? 'selected' : '' %>>2 - Baja</option>
+        <option value="3" <%= historia.prioridad == 3 ? 'selected' : '' %>>3 - Media</option>
+        <option value="4" <%= historia.prioridad == 4 ? 'selected' : '' %>>4 - Alta</option>
+        <option value="5" <%= historia.prioridad == 5 ? 'selected' : '' %>>5 - Muy alta</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado">
+        <option value="pendiente" <%= historia.estado === 'pendiente' ? 'selected' : '' %>>Pendiente</option>
+        <option value="en progreso" <%= historia.estado === 'en progreso' ? 'selected' : '' %>>En Progreso</option>
+        <option value="completada" <%= historia.estado === 'completada' ? 'selected' : '' %>>Completada</option>
+    </select>
+</div>

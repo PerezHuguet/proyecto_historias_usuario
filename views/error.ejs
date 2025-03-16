@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+
+<div class="error-container">
+    <h2>Error en la aplicación</h2>
+    <p><%= mensaje %></p>
+    <% if (typeof error !== 'undefined') { %>
+        <div class="error-details">
+            <h3>Detalles del error:</h3>
+            <pre><%= error.stack %></pre>
+        </div>
+    <% } %>
+    <a href="/" class="btn-volver">Volver al inicio</a>
+</div>
+
+<%- include('./partials/footer') %>
